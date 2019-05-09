@@ -2,19 +2,19 @@
 <listStudent>
 	<student>
 		<surname>лукашевич</surname>
-		<name>имя1</name>
-		<patronymic>отчество1</patronymic>
+		<name>6661</name>
+		<patronymic>666</patronymic>
         <adres>
-            <street>улица1</street>
-            <home>дом1</home>
+            <street>666</street>
+            <home>666</home>
         </adres>
         <mobiles>
             <mobile_phone>666</mobile_phone>
-            <home_phone>57657565765</home_phone>
+            <home_phone>666</home_phone>
         </mobiles>
 	</student>
 	<student>
-		<surname>фамилия2</surname>
+		<surname>666</surname>
 		<name>имя2</name>
 		<patronymic>отчкство2</patronymic>
         <adres>
@@ -22,8 +22,8 @@
             <home>дом2</home>
         </adres>
         <mobiles>
-            <mobile_phone>7987987987</mobile_phone>
-            <home_phone>57657565765</home_phone>
+            <mobile_phone>77777</mobile_phone>
+            <home_phone>666</home_phone>
         </mobiles>
 	</student>
 	<student>

@@ -12,10 +12,10 @@ public class SAXReader extends DefaultHandler {
     private boolean bName;
     private boolean bSurname;
     private boolean bPatronymic;
-    private boolean bGroupNumber;
-    private boolean bMissingsDueDisease;
-    private boolean bMissingsDueOtherReason;
-    private boolean bMissingsWithoutReason;
+    private boolean bStreet;
+    private boolean bHome;
+    private boolean bMobPhone;
+    private boolean bHomePhone;
     private boolean bListStudent;
     private boolean bStudent;
 
@@ -26,22 +26,22 @@ public class SAXReader extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (qName.equalsIgnoreCase("listStudent")) {
             bListStudent = true;
-        } else if (qName.equalsIgnoreCase("Student")) {
+        } else if (qName.equalsIgnoreCase("student")) {
             bStudent = true;
         } else if (qName.equalsIgnoreCase("surname")) {
             bSurname = true;
         } else if (qName.equalsIgnoreCase("name")) {
             bName = true;
-        } else if (qName.equalsIgnoreCase("Patronymic")) {
+        } else if (qName.equalsIgnoreCase("patronymic")) {
             bPatronymic = true;
-        } else if (qName.equalsIgnoreCase("group")) {
-            bGroupNumber = true;
-        } else if (qName.equalsIgnoreCase("missings_disease")) {
-            bMissingsDueDisease = true;
-        } else if (qName.equalsIgnoreCase("missings_due_other_reason")) {
-            bMissingsDueOtherReason = true;
-        } else if (qName.equalsIgnoreCase("Missings_without_reason")) {
-            bMissingsWithoutReason = true;
+        } else if (qName.equalsIgnoreCase("street")) {
+            bStreet = true;
+        } else if (qName.equalsIgnoreCase("home")) {
+            bHome = true;
+        } else if (qName.equalsIgnoreCase("mobile_phone")) {
+            bMobPhone = true;
+        } else if (qName.equalsIgnoreCase("home_phone")) {
+            bHomePhone = true;
         }
     }
 
@@ -62,18 +62,18 @@ public class SAXReader extends DefaultHandler {
         } else if (bPatronymic) {
             student.setPatronymic(new String(ch, start, length));
             bPatronymic = false;
-        } else if (bGroupNumber) {
-            student.setGroupNumb(Integer.parseInt(new String(ch, start, length)));
-            bGroupNumber = false;
-        } else if (bMissingsDueDisease) {
-            student.setMissingDueDisease(Integer.parseInt(new String(ch, start, length)));
-            bMissingsDueDisease = false;
-        } else if (bMissingsDueOtherReason) {
-            student.setMissingDueOtherReason(Integer.parseInt(new String(ch, start, length)));
-            bMissingsDueOtherReason = false;
-        } else if (bMissingsWithoutReason) {
-            student.setMissingWithoutReason(Integer.parseInt(new String(ch, start, length)));
-            bMissingsWithoutReason = false;
+        } else if (bStreet) {
+            student.setStreet(new String(ch, start, length));
+            bStreet = false;
+        } else if (bHome) {
+            student.setHome(new String(ch, start, length));
+            bHome = false;
+        } else if (bMobPhone) {
+            student.setMobPhone(new String(ch, start, length));
+            bMobPhone = false;
+        } else if (bHomePhone) {
+            student.setHomePhone(new String(ch, start, length));
+            bHomePhone = false;
         }
     }
 

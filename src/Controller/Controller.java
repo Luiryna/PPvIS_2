@@ -1,10 +1,9 @@
 package Controller;
 
+import Model.Info;
 import Model.SAXReader;
 import Model.Student;
 import Model.WriterXML;
-import Model.info;
-import org.eclipse.swt.widgets.TableItem;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -20,10 +19,10 @@ public class Controller {
 
     private  WriterXML writerXML;
     private  SAXReader saxReader;
-    private info info;
+    private Info info;
     private boolean generate = false;
 
-    public Controller(info info){
+    public Controller(Info info){
         this.info = info;
     }
 
@@ -55,20 +54,24 @@ public class Controller {
         }
     }
 
-    public List<Student> find1Student(String surname, int groupNumber){
+    public List<Student> firstSearch(String surname, String phoneNumb){
         List<Student> students = new ArrayList<>();
         for (Student student:info.getStudents()){
-            if (student.getSurname().equals(surname) && student.getGroupNumb()==groupNumber){
+            if (student.getSurname().equals(surname) && student.getHomePhone().equals(phoneNumb)){
                 students.add(student);
+                System.out.println(String.format("фамилия: %s,  имя: %s,  отчество: %s, моб: %s, дом: %s",
+                        student.getSurname(), student.getName(), student.getPatronymic(), student.getMobPhone(), student.getHomePhone()));
             }
         }
 
         return students;
     }
 
+    /*
+
     public List<Student> find2Student(String surname, String typeOfMissing){
         List<Student> students = new ArrayList<>();
-        for (Student student:info.getStudents()){
+        for (Student student:Info.getStudents()){
             if (typeOfMissing.equals("due disease")){
                 if (student.getSurname().equals(surname) && student.getMissingDueDisease()>0){
                     students.add(student);
@@ -92,7 +95,7 @@ public class Controller {
 
     public List<Student> find3Student(String surname, String typeOfMissing, int countMissings){
         List<Student> students = new ArrayList<>();
-        for (Student student:info.getStudents()){
+        for (Student student:Info.getStudents()){
             if (typeOfMissing.equals("due disease") && student.getMissingDueDisease() == countMissings){
                 if (student.getSurname().equals(surname) && student.getMissingDueDisease()>0){
                     students.add(student);
@@ -112,10 +115,8 @@ public class Controller {
             }
         }
         return students;
-    }
+    }*/
 
 
-    public int countMissings(Student student) {
-        return student.getMissingDueDisease() + student.getMissingDueOtherReason() + student.getMissingWithoutReason();
-    }
+
 }

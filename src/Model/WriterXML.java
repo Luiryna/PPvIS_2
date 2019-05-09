@@ -6,7 +6,6 @@ import org.w3c.dom.Element;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -52,27 +51,31 @@ public class WriterXML {
                 elementPatronymic.setTextContent(studentIter.getPatronymic());
                 elementStudent.appendChild(elementPatronymic);
 
-                Element elementGroup = document.createElement("group");
-                elementGroup.setTextContent(String.valueOf(studentIter.getGroupNumb()));
-                elementStudent.appendChild(elementGroup);
+                Element elementAdres = document.createElement("adres");
 
-                Element elementMissings = document.createElement("missings");
-
-                Element elementMissingsDueDisease = document.createElement("missings_disease");
-
-                elementMissingsDueDisease.setTextContent(String.valueOf(studentIter.getMissingDueDisease()));
-                elementMissings.appendChild(elementMissingsDueDisease);
-
-                Element elementMissingsDueOtherReason = document.createElement("missings_due_other_reason");
-                elementMissingsDueOtherReason.setTextContent(String.valueOf(studentIter.getMissingDueOtherReason()));
-                elementMissings.appendChild(elementMissingsDueOtherReason);
-
-                Element elementMissingsWithoutReason = document.createElement("Missings_without_reason");
-                elementMissingsWithoutReason.setTextContent(String.valueOf(studentIter.getMissingWithoutReason()));
-                elementMissings.appendChild(elementMissingsWithoutReason);
+                Element elementStreet = document.createElement("street");
+                elementStreet.setTextContent(studentIter.getStreet());
+                elementAdres.appendChild(elementStreet);
 
 
-                elementStudent.appendChild(elementMissings);
+                Element elementHome = document.createElement("home");
+                elementHome.setTextContent(studentIter.getHome());
+                elementAdres.appendChild(elementHome);
+
+                elementStudent.appendChild(elementAdres);
+
+
+                Element elementMobiles = document.createElement("mobiles");
+
+                Element elementMobPhone = document.createElement("mobile_phone");
+                elementMobPhone.setTextContent(studentIter.getPatronymic());
+                elementMobiles.appendChild(elementMobPhone);
+
+                Element elementHomePhone = document.createElement("home_phone");
+                elementHomePhone.setTextContent(studentIter.getPatronymic());
+                elementMobiles.appendChild(elementHomePhone);
+
+                elementStudent.appendChild(elementMobiles);
                 elementList.appendChild(elementStudent);
             }
 

@@ -7,11 +7,11 @@ import org.eclipse.swt.widgets.*;
 import Controller.Controller;
 
 
-public class TableComposite extends Composite {
+public class Pagination extends Composite {
     public Table table = new Table(this, SWT.SINGLE | SWT.FULL_SELECTION |
             SWT.V_SCROLL | SWT.H_SCROLL);
 
-    public TableComposite(Composite composite, int i) {
+    public Pagination(Composite composite, int i) {
         super(composite, i);
     }
 

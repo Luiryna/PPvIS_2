@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Info {
     private Info info;
-    public List<Student> students = new ArrayList<>();
 
+    public List<Student> students = new ArrayList<>();
 
     public List<Student> getStudents() {
         return students;

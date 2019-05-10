@@ -10,16 +10,16 @@ import org.eclipse.swt.widgets.*;
 
 import Controller.Controller;
 
-public class AddDisplay {
+public class AddWindow {
     private Display display;
     private Shell shell;
-    private MainDisplay mainDisplay;
+    private MainWindow mainWindow;
     private Info info;
     private Controller controller;
 
-    public AddDisplay(Display display, Controller controller, Info info, MainDisplay mainDisplay) {
+    public AddWindow(Display display, Controller controller, Info info, MainWindow mainWindow) {
         this.controller = controller;
-        this.mainDisplay = mainDisplay;
+        this.mainWindow = mainWindow;
         this.info = info;
         this.display = display;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
@@ -30,12 +30,6 @@ public class AddDisplay {
         rowLayout.marginLeft = 50;
         rowLayout.marginTop = 50;
         shell.setLayout(rowLayout);
-        initAddDisplay();
-        shell.open();
-    }
-
-    private void initAddDisplay() {
-
         Label labelSurname = new Label(shell, SWT.NONE);
         labelSurname.setText("Enter surname");
         Text surname = new Text(shell, SWT.BORDER);
@@ -85,7 +79,7 @@ public class AddDisplay {
                 homePhone.setText("");
             }
         });
-
+        shell.open();
     }
 
 }

@@ -1,9 +1,9 @@
-import View.MainDisplay;
+import View.MainWindow;
 
 public class Main {
 
     public static void main(String[] args) {
-        MainDisplay mainDisplay = new MainDisplay();
+        MainWindow mainDisplay = new MainWindow();
 	// write your code here
     }
 }

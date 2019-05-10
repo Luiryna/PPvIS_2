@@ -13,12 +13,12 @@ import org.eclipse.swt.widgets.*;
 
 import static java.lang.String.valueOf;
 
-public class DeleteDisplay {
+public class DeleteWindow {
     private Shell shell;
     public Controller controller;
     private Info info;
 
-    public DeleteDisplay(Display display, Info info, Controller controller) {
+    public DeleteWindow(Display display, Info info, Controller controller) {
         this.info = info;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Delete window");
@@ -29,13 +29,6 @@ public class DeleteDisplay {
         rowLayout.marginRight = 10;
         rowLayout.marginTop = 10;
         shell.setLayout(rowLayout);
-        initDeleteDisplay();
-        this.controller = controller;
-        shell.open();
-    }
-
-    private void initDeleteDisplay() {
-
         Group group1 = new Group(shell, SWT.SHADOW_IN);
         group1.setText("first delete");
         group1.setLayout(new RowLayout(SWT.VERTICAL));
@@ -79,22 +72,23 @@ public class DeleteDisplay {
             @Override
             public void widgetSelected(SelectionEvent e) {
 
-                    int count = 0;
+                int count = 0;
 
-                    for (Student student : controller.firstSearch(text1.getText(), text12.getText())) {
-                        info.getStudents().remove(student);
-                        count++;
-                    }
+                for (Student student : controller.firstSearch(text1.getText(), text12.getText())) {
+                    info.getStudents().remove(student);
+                    count++;
+                }
 
-                    MessageBox warning1 = new MessageBox(shell, SWT.COLOR_RED);
-                    warning1.setMessage(count + " items was deleted");
-                    warning1.open();
-                    text1.setText("");
-                    text12.setText("");
+                MessageBox warning1 = new MessageBox(shell, SWT.COLOR_RED);
+                warning1.setMessage(count + " items was deleted");
+                warning1.open();
+                text1.setText("");
+                text12.setText("");
 
             }
         });
-
-
+        this.controller = controller;
+        shell.open();
     }
+
 }

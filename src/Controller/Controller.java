@@ -20,7 +20,6 @@ public class Controller {
     private  WriterXML writerXML;
     private  SAXReader saxReader;
     private Info info;
-    private boolean generate = false;
 
     public Controller(Info info){
         this.info = info;
@@ -66,57 +65,5 @@ public class Controller {
 
         return students;
     }
-
-    /*
-
-    public List<Student> find2Student(String surname, String typeOfMissing){
-        List<Student> students = new ArrayList<>();
-        for (Student student:Info.getStudents()){
-            if (typeOfMissing.equals("due disease")){
-                if (student.getSurname().equals(surname) && student.getMissingDueDisease()>0){
-                    students.add(student);
-                }
-            } else {
-                if (typeOfMissing.equals("without reason")){
-                    if (student.getSurname().equals(surname) && student.getMissingWithoutReason()>0){
-                        students.add(student);
-                    }
-                } else {
-                    if (typeOfMissing.equals("due other reason")){
-                        if (student.getSurname().equals(surname) && student.getMissingDueOtherReason()>0){
-                            students.add(student);
-                        }
-                    }
-                }
-            }
-        }
-        return students;
-    }
-
-    public List<Student> find3Student(String surname, String typeOfMissing, int countMissings){
-        List<Student> students = new ArrayList<>();
-        for (Student student:Info.getStudents()){
-            if (typeOfMissing.equals("due disease") && student.getMissingDueDisease() == countMissings){
-                if (student.getSurname().equals(surname) && student.getMissingDueDisease()>0){
-                    students.add(student);
-                }
-            } else {
-                if (typeOfMissing.equals("without reason") && student.getMissingWithoutReason() == countMissings){
-                    if (student.getSurname().equals(surname) && student.getMissingWithoutReason()>0){
-                        students.add(student);
-                    }
-                } else {
-                    if (typeOfMissing.equals("due other reason") && student.getMissingDueOtherReason() == countMissings){
-                        if (student.getSurname().equals(surname) && student.getMissingDueOtherReason()>0){
-                            students.add(student);
-                        }
-                    }
-                }
-            }
-        }
-        return students;
-    }*/
-
-
 
 }

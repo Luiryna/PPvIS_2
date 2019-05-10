@@ -9,38 +9,20 @@ import org.eclipse.swt.widgets.*;
 
 import java.io.File;
 
-import static java.lang.String.valueOf;
-
-public class MainDisplay {
+public class MainWindow {
 
 
     private Display display = new Display();
     private Shell shell = new Shell(display, SWT.SHELL_TRIM | SWT.CENTER);
     private Controller controller;
     private Info info = new Info();
-    private TableComposite tableComposite;
+    private Pagination pagination;
 
 
-    public MainDisplay() {
+    public MainWindow() {
         shell.setText("PPvIS 2");
         shell.setSize(750, 600);
         controller = new Controller(info);
-        initFirstWindow();
-        tableComposite = new TableComposite(shell, SWT.NULL);
-        tableComposite.initTable(info, controller);
-        tableComposite.setBounds(50, 150, 992, 400);
-        shell.open();
-        while (!shell.isDisposed()) {
-            if (!display.readAndDispatch()) {
-                display.sleep();
-            }
-        }
-        display.dispose();
-    }
-
-
-    private void initFirstWindow() {
-
         Menu menuBar = new Menu(shell, SWT.BAR);
         shell.setMenuBar(menuBar);
 
@@ -77,7 +59,7 @@ public class MainDisplay {
 
             public void widgetSelected(SelectionEvent arg0) {
 
-
+                AddWindow addWindow = new AddWindow(display, controller, info, MainWindow.this);
 
             }
 
@@ -90,7 +72,7 @@ public class MainDisplay {
 
             public void widgetSelected(SelectionEvent arg0) {
 
-
+                SearchWindow searchWindow = new SearchWindow(display, controller, info);
 
 
             }
@@ -104,7 +86,7 @@ public class MainDisplay {
 
             public void widgetSelected(SelectionEvent arg0) {
 
-
+                DeleteWindow deleteWindow = new DeleteWindow(display, info, controller);
 
             }
 
@@ -148,31 +130,42 @@ public class MainDisplay {
         add.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                AddDisplay addDisplay = new AddDisplay(display, controller, info, MainDisplay.this);
+                AddWindow addWindow = new AddWindow(display, controller, info, MainWindow.this);
             }
         });
 
         search.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                SearchDisplay searchDisplay = new SearchDisplay(display, controller, info);
+                SearchWindow searchWindow = new SearchWindow(display, controller, info);
             }
         });
 
         delete.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                DeleteDisplay deleteDisplay = new DeleteDisplay(display, info, controller);
+                DeleteWindow deleteWindow = new DeleteWindow(display, info, controller);
             }
         });
 
         update.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                tableComposite.clear();
-                tableComposite.draw(info, controller);
+                pagination.clear();
+                pagination.draw(info, controller);
             }
         });
+
+        pagination = new Pagination(shell, SWT.NULL);
+        pagination.initTable(info, controller);
+        pagination.setBounds(50, 150, 992, 400);
+        shell.open();
+        while (!shell.isDisposed()) {
+            if (!display.readAndDispatch()) {
+                display.sleep();
+            }
+        }
+        display.dispose();
     }
 
     private void save() {
@@ -193,8 +186,8 @@ public class MainDisplay {
         fd.setFilterExtensions(filterExt);
         String selected = fd.open();
         controller.open(new File(selected));
-        tableComposite.clear();
-        tableComposite.draw(info, controller);
+        pagination.clear();
+        pagination.draw(info, controller);
     }
 
 

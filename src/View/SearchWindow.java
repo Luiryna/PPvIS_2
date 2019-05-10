@@ -9,13 +9,13 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.*;
 
-public class SearchDisplay {
+public class SearchWindow {
     private Shell shell;
     public Controller controller;
     private Info info;
-    public TableComposite tableComposite;
+    public Pagination pagination;
 
-    public SearchDisplay(Display display, Controller controller, Info info) {
+    public SearchWindow(Display display, Controller controller, Info info) {
         this.info = info;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Search window");
@@ -26,15 +26,6 @@ public class SearchDisplay {
         rowLayout.marginRight = 10;
         rowLayout.marginTop = 10;
         shell.setLayout(rowLayout);
-        initSearhDisplay();
-        tableComposite = new TableComposite(shell, SWT.NONE);
-        this.controller = controller;
-        tableComposite.initTable(info, controller);
-        shell.open();
-    }
-
-    private void initSearhDisplay() {
-
         Group group1 = new Group(shell, SWT.SHADOW_IN);
         group1.setText("first search");
         group1.setLayout(new RowLayout(SWT.VERTICAL));
@@ -81,17 +72,20 @@ public class SearchDisplay {
             @Override
             public void widgetSelected(SelectionEvent e) {
 
-                    for (Student student : controller.firstSearch(text1.getText(), text12.getText())) {
-                        tableComposite.draw(info, controller);
-                    }
-                    text1.setText("");
-                    text12.setText("");
+                for (Student student : controller.firstSearch(text1.getText(), text12.getText())) {
+                    pagination.draw(info, controller);
+                }
+                text1.setText("");
+                text12.setText("");
 
 
             }
         });
 
-
-
+        pagination = new Pagination(shell, SWT.NONE);
+        this.controller = controller;
+        pagination.initTable(info, controller);
+        shell.open();
     }
+
 }

@@ -1,7 +1,7 @@
 package View;
 
 import Controller.Controller;
-import Model.Info;
+import Model.StudentsData;
 import Model.Student;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -12,11 +12,11 @@ import org.eclipse.swt.widgets.*;
 public class SearchWindow {
     private Shell shell;
     public Controller controller;
-    private Info info;
+    private StudentsData studentsData;
     public Pagination pagination;
 
-    public SearchWindow(Display display, Controller controller, Info info) {
-        this.info = info;
+    public SearchWindow(Display display, Controller controller, StudentsData studentsData) {
+        this.studentsData = studentsData;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Search window");
         shell.setSize(800, 600);
@@ -73,7 +73,7 @@ public class SearchWindow {
             public void widgetSelected(SelectionEvent e) {
 
                 for (Student student : controller.firstSearch(text1.getText(), text12.getText())) {
-                    pagination.draw(info, controller);
+                    pagination.draw(studentsData, controller);
                 }
                 text1.setText("");
                 text12.setText("");
@@ -84,7 +84,7 @@ public class SearchWindow {
 
         pagination = new Pagination(shell, SWT.NONE);
         this.controller = controller;
-        pagination.initTable(info, controller);
+        pagination.initTable(studentsData, controller);
         shell.open();
     }
 

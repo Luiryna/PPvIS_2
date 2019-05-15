@@ -3,8 +3,8 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Info {
-    private Info info;
+public class StudentsData {
+    private StudentsData studentsData;
 
     public List<Student> students = new ArrayList<>();
 

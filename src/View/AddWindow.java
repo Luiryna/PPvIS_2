@@ -1,6 +1,6 @@
 package View;
 
-import Model.Info;
+import Model.StudentsData;
 import Model.Student;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -14,13 +14,13 @@ public class AddWindow {
     private Display display;
     private Shell shell;
     private MainWindow mainWindow;
-    private Info info;
+    private StudentsData studentsData;
     private Controller controller;
 
-    public AddWindow(Display display, Controller controller, Info info, MainWindow mainWindow) {
+    public AddWindow(Display display, Controller controller, StudentsData studentsData, MainWindow mainWindow) {
         this.controller = controller;
         this.mainWindow = mainWindow;
-        this.info = info;
+        this.studentsData = studentsData;
         this.display = display;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Add display");
@@ -60,7 +60,7 @@ public class AddWindow {
 
 
         Button add = new Button(shell, SWT.PUSH);
-        add.setBounds(100, 230, 90, 30);
+        add.setBounds(100, 300, 90, 30);
         add.setText("add");
 
         add.addSelectionListener(new SelectionAdapter() {
@@ -68,7 +68,7 @@ public class AddWindow {
             public void widgetSelected(SelectionEvent e) {
                 Student student = new Student(surname.getText(), name.getText(), patronymic.getText(), street.getText(),
                         home.getText(), mobPhone.getText(), homePhone.getText());
-                info.setStudent(student);
+                studentsData.setStudent(student);
 
                 surname.setText("");
                 name.setText("");

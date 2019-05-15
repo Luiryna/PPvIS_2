@@ -2,24 +2,21 @@ package View;
 
 import Controller.Controller;
 
-import Model.Info;
+import Model.StudentsData;
 import Model.Student;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.*;
-
-import static java.lang.String.valueOf;
 
 public class DeleteWindow {
     private Shell shell;
     public Controller controller;
-    private Info info;
+    private StudentsData studentsData;
 
-    public DeleteWindow(Display display, Info info, Controller controller) {
-        this.info = info;
+    public DeleteWindow(Display display, StudentsData studentsData, Controller controller) {
+        this.studentsData = studentsData;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Delete window");
         shell.setSize(330, 600);
@@ -75,18 +72,31 @@ public class DeleteWindow {
                 int count = 0;
 
                 for (Student student : controller.firstSearch(text1.getText(), text12.getText())) {
-                    info.getStudents().remove(student);
+                    studentsData.getStudents().remove(student);
                     count++;
                 }
 
-                MessageBox warning1 = new MessageBox(shell, SWT.COLOR_RED);
-                warning1.setMessage(count + " items was deleted");
-                warning1.open();
+                if (count == 0) {
+
+                    MessageBox warning = new MessageBox(shell, SWT.COLOR_RED);
+                    warning.setMessage("no items to delete");
+                    warning.open();
+
+                } else {
+
+                    MessageBox warning1 = new MessageBox(shell, SWT.COLOR_RED);
+                    warning1.setMessage(count + " items was deleted");
+                    warning1.open();
+
+                }
                 text1.setText("");
                 text12.setText("");
 
             }
         });
+
+
+
         this.controller = controller;
         shell.open();
     }

@@ -1,7 +1,7 @@
 package View;
 
 import Controller.Controller;
-import Model.Info;
+import Model.StudentsData;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -15,14 +15,14 @@ public class MainWindow {
     private Display display = new Display();
     private Shell shell = new Shell(display, SWT.SHELL_TRIM | SWT.CENTER);
     private Controller controller;
-    private Info info = new Info();
+    private StudentsData studentsData = new StudentsData();
     private Pagination pagination;
 
 
     public MainWindow() {
         shell.setText("PPvIS 2");
         shell.setSize(750, 600);
-        controller = new Controller(info);
+        controller = new Controller(studentsData);
         Menu menuBar = new Menu(shell, SWT.BAR);
         shell.setMenuBar(menuBar);
 
@@ -59,7 +59,7 @@ public class MainWindow {
 
             public void widgetSelected(SelectionEvent arg0) {
 
-                AddWindow addWindow = new AddWindow(display, controller, info, MainWindow.this);
+                AddWindow addWindow = new AddWindow(display, controller, studentsData, MainWindow.this);
 
             }
 
@@ -72,7 +72,7 @@ public class MainWindow {
 
             public void widgetSelected(SelectionEvent arg0) {
 
-                SearchWindow searchWindow = new SearchWindow(display, controller, info);
+                SearchWindow searchWindow = new SearchWindow(display, controller, studentsData);
 
 
             }
@@ -86,7 +86,7 @@ public class MainWindow {
 
             public void widgetSelected(SelectionEvent arg0) {
 
-                DeleteWindow deleteWindow = new DeleteWindow(display, info, controller);
+                DeleteWindow deleteWindow = new DeleteWindow(display, studentsData, controller);
 
             }
 
@@ -107,7 +107,7 @@ public class MainWindow {
         save.setText("save");
         Button update = new Button(shell, SWT.PUSH);
         update.setBounds(310, 100, 100, 30);
-        update.setText("update");
+        update.setText("update items");
         Button open = new Button(shell, SWT.PUSH);
         open.setBounds(570, 50, 100, 30);
         open.setText("open");
@@ -130,21 +130,21 @@ public class MainWindow {
         add.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                AddWindow addWindow = new AddWindow(display, controller, info, MainWindow.this);
+                AddWindow addWindow = new AddWindow(display, controller, studentsData, MainWindow.this);
             }
         });
 
         search.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                SearchWindow searchWindow = new SearchWindow(display, controller, info);
+                SearchWindow searchWindow = new SearchWindow(display, controller, studentsData);
             }
         });
 
         delete.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                DeleteWindow deleteWindow = new DeleteWindow(display, info, controller);
+                DeleteWindow deleteWindow = new DeleteWindow(display, studentsData, controller);
             }
         });
 
@@ -152,13 +152,16 @@ public class MainWindow {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 pagination.clear();
-                pagination.draw(info, controller);
+                pagination.draw(studentsData, controller);
             }
         });
 
         pagination = new Pagination(shell, SWT.NULL);
-        pagination.initTable(info, controller);
+        pagination.initTable(studentsData, controller);
         pagination.setBounds(50, 150, 992, 400);
+
+
+
         shell.open();
         while (!shell.isDisposed()) {
             if (!display.readAndDispatch()) {
@@ -175,7 +178,7 @@ public class MainWindow {
         String[] filterExt = {"*.xml"};
         fd.setFilterExtensions(filterExt);
         String selected = fd.open();
-        controller.save(new File(selected));
+        //controller.save(new File(selected));
     }
 
     private void open() {
@@ -187,7 +190,7 @@ public class MainWindow {
         String selected = fd.open();
         controller.open(new File(selected));
         pagination.clear();
-        pagination.draw(info, controller);
+        pagination.draw(studentsData, controller);
     }
 
 

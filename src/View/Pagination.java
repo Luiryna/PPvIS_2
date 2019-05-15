@@ -1,6 +1,6 @@
 package View;
 
-import Model.Info;
+import Model.StudentsData;
 import Model.Student;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.*;
@@ -15,9 +15,9 @@ public class Pagination extends Composite {
         super(composite, i);
     }
 
-    public void draw(Info info, Controller controller) {
+    public void draw(StudentsData studentsData, Controller controller) {
 
-        for (Student student : info.getStudents()) {
+        for (Student student : studentsData.getStudents()) {
             TableItem tableItem = new TableItem(table, SWT.PUSH);
             tableItem.setText(0, student.getSurname() + " " + student.getName() + " " + student.getPatronymic());
             tableItem.setText(1, student.getStreet() + " " + student.getHome());
@@ -28,10 +28,7 @@ public class Pagination extends Composite {
 
     }
 
-
-
-
-    public void initTable(Info info, Controller controller) {
+    public void initTable(StudentsData studentsData, Controller controller) {
 
         table.setBounds(50, 50, 520, 300);
         table.setHeaderVisible(true);

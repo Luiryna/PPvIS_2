@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.Info;
+import Model.StudentsData;
 import Model.SAXReader;
 import Model.Student;
 import Model.WriterXML;
@@ -19,43 +19,40 @@ public class Controller {
 
     private  WriterXML writerXML;
     private  SAXReader saxReader;
-    private Info info;
+    private StudentsData studentsData;
 
-    public Controller(Info info){
-        this.info = info;
+    public Controller(StudentsData studentsData){
+        this.studentsData = studentsData;
     }
 
-    public boolean save(File file) {
+    public void save(File file) {
         if (writerXML == null)
-            writerXML = new WriterXML(info.getStudents());
+            writerXML = new WriterXML(studentsData.getStudents());
         writerXML.setFile(file);
         try {
             writerXML.write();
-            return true;
         } catch (TransformerException | ParserConfigurationException e) {
-            return false;
         }
     }
 
 
-
-    public boolean open(File file) {
+    public void open(File file) {
         if (saxReader == null) saxReader = new SAXReader();
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser parser = factory.newSAXParser();
             parser.parse(file, saxReader);
-            info.setStudents(saxReader.getStudents());
-            return true;
+            studentsData.setStudents(saxReader.getStudents());
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
-            return false;
         }
     }
 
+
+
     public List<Student> firstSearch(String surname, String phoneNumb){
         List<Student> students = new ArrayList<>();
-        for (Student student:info.getStudents()){
+        for (Student student: studentsData.getStudents()){
             if (student.getSurname().equals(surname) && student.getHomePhone().equals(phoneNumb)){
                 students.add(student);
                 System.out.println(String.format("фамилия: %s,  имя: %s,  отчество: %s, моб: %s, дом: %s",

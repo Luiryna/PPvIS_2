@@ -86,7 +86,7 @@ public class MainWindow {
 
             public void widgetSelected(SelectionEvent arg0) {
 
-                DeleteWindow deleteWindow = new DeleteWindow(display, studentsData, controller);
+                DeleteWindow deleteWindow = new DeleteWindow(display, studentsData, controller, MainWindow.this);
 
             }
 
@@ -144,7 +144,7 @@ public class MainWindow {
         delete.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                DeleteWindow deleteWindow = new DeleteWindow(display, studentsData, controller);
+                DeleteWindow deleteWindow = new DeleteWindow(display, studentsData, controller, MainWindow.this);
             }
         });
 
@@ -178,7 +178,7 @@ public class MainWindow {
         String[] filterExt = {"*.xml"};
         fd.setFilterExtensions(filterExt);
         String selected = fd.open();
-        //controller.save(new File(selected));
+        controller.save(new File(selected));
     }
 
     private void open() {

@@ -25,9 +25,11 @@ public class SAXReader extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (qName.equalsIgnoreCase("listStudent")) {
-            bListStudent = true;
+//            bListStudent = true;
+            students = new ArrayList();
         } else if (qName.equalsIgnoreCase("student")) {
-            bStudent = true;
+//            bStudent = true;
+            student = new Student();
         } else if (qName.equalsIgnoreCase("surname")) {
             bSurname = true;
         } else if (qName.equalsIgnoreCase("name")) {

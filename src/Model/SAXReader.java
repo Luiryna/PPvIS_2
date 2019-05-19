@@ -80,7 +80,9 @@ public class SAXReader extends DefaultHandler {
     }
 
     public List<Student> getStudents() {
+
         return students;
+
     }
 
     @Override

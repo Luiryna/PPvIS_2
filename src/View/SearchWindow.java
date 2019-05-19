@@ -10,15 +10,12 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.*;
 
 public class SearchWindow {
-    private Shell shell;
     public Controller controller;
-    private StudentsData studentsData;
     public Pagination pagination;
-    StudentsData studentsData1 = new StudentsData();
+    private StudentsData studentsData1 = new StudentsData();
 
     public SearchWindow(Display display, Controller controller, StudentsData studentsData) {
-        this.studentsData = studentsData;
-        shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
+        Shell shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Search window");
         shell.setSize(800, 800);
         RowLayout rowLayout = new RowLayout();

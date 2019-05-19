@@ -13,13 +13,8 @@ import org.eclipse.swt.widgets.*;
 public class DeleteWindow {
     private Shell shell;
     public Controller controller;
-    private StudentsData studentsData;
-    private MainWindow mainWindow;
-    private Pagination pagination;
 
     public DeleteWindow(Display display, StudentsData studentsData, Controller controller, MainWindow mainWindow) {
-        this.studentsData = studentsData;
-        this.mainWindow = mainWindow;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Delete window");
         shell.setSize(330, 600);

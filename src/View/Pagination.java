@@ -30,7 +30,6 @@ public class Pagination extends Composite {
         clear();
 
         int toIndex = currentPageNumber*count+count <= studentsData.getStudents().size() ? currentPageNumber*count+count : studentsData.getStudents().size();
-        //int lastPage = studentsData.getStudents().size() % count == 0 ? studentsData.getStudents().size() / count : studentsData.getStudents().size() / count + 1;
         double result = studentsData.getStudents().size()/count;
         lastPage = (int) Math.ceil(result);
 

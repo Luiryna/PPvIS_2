@@ -11,18 +11,9 @@ import org.eclipse.swt.widgets.*;
 import Controller.Controller;
 
 public class AddWindow {
-    private Display display;
-    private Shell shell;
-    private MainWindow mainWindow;
-    private StudentsData studentsData;
-    private Controller controller;
 
     public AddWindow(Display display, Controller controller, StudentsData studentsData, MainWindow mainWindow) {
-        this.controller = controller;
-        this.mainWindow = mainWindow;
-        this.studentsData = studentsData;
-        this.display = display;
-        shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
+        Shell shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Add display");
         shell.setSize(200, 650);
         RowLayout rowLayout = new RowLayout();

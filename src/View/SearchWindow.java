@@ -14,12 +14,13 @@ public class SearchWindow {
     public Controller controller;
     private StudentsData studentsData;
     public Pagination pagination;
+    StudentsData studentsData1 = new StudentsData();
 
     public SearchWindow(Display display, Controller controller, StudentsData studentsData) {
         this.studentsData = studentsData;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Search window");
-        shell.setSize(800, 600);
+        shell.setSize(800, 800);
         RowLayout rowLayout = new RowLayout();
         rowLayout.spacing = 10;
         rowLayout.marginLeft = 10;
@@ -64,27 +65,22 @@ public class SearchWindow {
 
         Button button3 = new Button(group3, SWT.NONE);
         button3.setText("search");
-
-
-
+        //StudentsData studentsData1;
 
         button.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-
-                for (Student student : controller.firstSearch(text1.getText(), text12.getText())) {
-                    pagination.draw(studentsData, controller);
-                }
+                //studentsData1 = new StudentsData();
+                studentsData1.students = controller.firstSearch(text1.getText(), text12.getText());
+                pagination.draw(studentsData1, controller);
                 text1.setText("");
                 text12.setText("");
-
-
             }
         });
 
         pagination = new Pagination(shell, SWT.NONE);
         this.controller = controller;
-        pagination.initTable(studentsData, controller);
+        pagination.initTable(studentsData1, controller);
         shell.open();
     }
 

@@ -3,8 +3,11 @@ package View;
 import Model.StudentsData;
 import Model.Student;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.*;
 import Controller.Controller;
+import java.util.List;
 
 
 public class Pagination extends Composite {
@@ -14,14 +17,26 @@ public class Pagination extends Composite {
     public Label allWrites = new Label(this, SWT.NONE);
     public Label allPages = new Label(this, SWT.NONE);
     public Label currentPage = new Label(this, SWT.NONE);
+    public Text numberToShow = new Text(this, SWT.BORDER);
+    int count = 5;
+    int currentPageNumber = 0;
+    int lastPage = 1;
 
     public Pagination(Composite composite, int i) {
         super(composite, i);
     }
 
     public void draw(StudentsData studentsData, Controller controller) {
+        clear();
 
-        for (Student student : studentsData.getStudents()) {
+        int toIndex = currentPageNumber*count+count <= studentsData.getStudents().size() ? currentPageNumber*count+count : studentsData.getStudents().size();
+        //int lastPage = studentsData.getStudents().size() % count == 0 ? studentsData.getStudents().size() / count : studentsData.getStudents().size() / count + 1;
+        double result = studentsData.getStudents().size()/count;
+        lastPage = (int) Math.ceil(result);
+
+        List<Student> studentList = studentsData.getStudents().subList(currentPageNumber*count, toIndex);
+
+        for (Student student : studentList) {
             TableItem tableItem = new TableItem(table, SWT.PUSH);
             tableItem.setText(0, student.getSurname() + " " + student.getName() + " " + student.getPatronymic());
             tableItem.setText(1, student.getStreet() + " " + student.getHome());
@@ -31,8 +46,15 @@ public class Pagination extends Composite {
         }
 
         allWrites.setText("Total number of writes: " + studentsData.getStudents().size());
-        allPages.setText("Pages at all: ");
-        currentPage.setText("Current page: ");
+        allPages.setText("Pages at all: " + lastPage);
+        currentPage.setText("Current page: " + (currentPageNumber + 1));
+    }
+
+    private void createColumn(Table table, String text, int width){
+        TableColumn fioColumn = new TableColumn(table, SWT.CENTER);
+        fioColumn.setText(text);
+        fioColumn.setResizable(true);
+        fioColumn.setWidth(width);
     }
 
     public void initTable(StudentsData studentsData, Controller controller) {
@@ -41,56 +63,84 @@ public class Pagination extends Composite {
         table.setHeaderVisible(true);
         table.setLinesVisible(true);
 
-        TableColumn fioColumn = new TableColumn(table, SWT.CENTER);
-        fioColumn.setText("Student's FIO");
-        fioColumn.setResizable(true);
-        fioColumn.setWidth(150);
+        createColumn(table, "Student's FIO", 150);
 
-        TableColumn adresColumn = new TableColumn(table, SWT.CENTER);
-        adresColumn.setText("Adres");
-        adresColumn.setResizable(true);
-        adresColumn.setWidth(150);
+        createColumn(table, "Address", 150);
 
-        TableColumn MobPhineColumn = new TableColumn(table, SWT.CENTER);
-        MobPhineColumn.setText("Mobile phone");
-        MobPhineColumn.setResizable(true);
-        MobPhineColumn.setWidth(110);
+        createColumn(table, "Mobile phone", 110);
 
-        TableColumn MobPhoneColumn = new TableColumn(table, SWT.CENTER);
-        MobPhoneColumn.setText("Home phone");
-        MobPhoneColumn.setResizable(true);
-        MobPhoneColumn.setWidth(110);
+        createColumn(table, "Home phone", 110);
 
         Button buttonFirstPage = new Button(this, SWT.PUSH);
         buttonFirstPage.setBounds(50, 150, 100, 30);
         buttonFirstPage.setText("FIRST");
 
+        buttonFirstPage.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                currentPageNumber = 0;
+                draw(studentsData, controller);
+            }
+        });
+
         Button buttonPreviousPage = new Button(this, SWT.PUSH);
         buttonPreviousPage.setBounds(180, 150, 100, 30);
         buttonPreviousPage.setText("PREVIOUS");
+
+        buttonPreviousPage.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                if (currentPageNumber > 0){
+                    currentPageNumber--;
+                }
+
+                draw(studentsData, controller);
+            }
+        });
 
         Button buttonNextPage = new Button(this, SWT.PUSH);
         buttonNextPage.setBounds(330, 150, 100, 30);
         buttonNextPage.setText("NEXT");
 
+        buttonNextPage.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                if (currentPageNumber < lastPage){
+                    currentPageNumber++;
+                }
+                draw(studentsData, controller);
+            }
+        });
+
         Button buttonLastPage = new Button(this, SWT.PUSH);
         buttonLastPage.setBounds(460, 150, 100, 30);
         buttonLastPage.setText("LAST");
 
+        buttonLastPage.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                currentPageNumber = lastPage;
+                draw(studentsData, controller);
+            }
+        });
+
         numberOfWrites.setBounds(50, 10, 277, 30);
         numberOfWrites.setText("Enter number of writes to show on a page:");
-
-        Text numberToShow = new Text(this, SWT.BORDER);
         numberToShow.setBounds(350, 10, 30, 25);
 
         Button enter = new Button(this, SWT.PUSH);
         enter.setBounds(390, 10, 100, 30);
         enter.setText("enter");
 
+        enter.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                count = Integer.parseInt(numberToShow.getText());
+                draw(studentsData, controller);
+            }});
+
         allWrites.setBounds(50, 50, 200, 30);
-
         allPages.setBounds(50, 100, 150, 30);
-
         currentPage.setBounds(250, 100, 150, 30);
     }
 

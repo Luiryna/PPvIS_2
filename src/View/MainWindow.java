@@ -11,13 +11,11 @@ import java.io.File;
 
 public class MainWindow {
 
-
     private Display display = new Display();
     private Shell shell = new Shell(display, SWT.SHELL_TRIM | SWT.CENTER);
     private Controller controller;
     private StudentsData studentsData = new StudentsData();
     private Pagination pagination;
-
 
     public MainWindow() {
         shell.setText("PPvIS 2");
@@ -32,9 +30,7 @@ public class MainWindow {
         item1.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent arg0) {
-
                 open();
-
             }
 
         });
@@ -45,9 +41,7 @@ public class MainWindow {
         item2.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent arg0) {
-
                 save();
-
             }
 
         });
@@ -58,9 +52,7 @@ public class MainWindow {
         item3.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent arg0) {
-
                 AddWindow addWindow = new AddWindow(display, controller, studentsData, MainWindow.this);
-
             }
 
         });
@@ -71,7 +63,6 @@ public class MainWindow {
         item4.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent arg0) {
-
                 SearchWindow searchWindow = new SearchWindow(display, controller, studentsData);
 
 
@@ -105,9 +96,7 @@ public class MainWindow {
         Button save = new Button(shell, SWT.PUSH);
         save.setBounds(440, 50, 100, 30);
         save.setText("save");
-        Button update = new Button(shell, SWT.PUSH);
-        update.setBounds(310, 100, 100, 30);
-        update.setText("update items");
+
         Button open = new Button(shell, SWT.PUSH);
         open.setBounds(570, 50, 100, 30);
         open.setText("open");
@@ -148,13 +137,6 @@ public class MainWindow {
             }
         });
 
-        update.addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent e) {
-                pagination.clear();
-                pagination.draw(studentsData, controller);
-            }
-        });
 
         pagination = new Pagination(shell, SWT.NULL);
         pagination.initTable(studentsData, controller);
@@ -171,6 +153,10 @@ public class MainWindow {
         display.dispose();
     }
 
+    public void redraw(){
+        pagination.clear();
+        pagination.draw(studentsData, controller);
+    }
     private void save() {
         FileDialog fd = new FileDialog(shell, SWT.SAVE);
         fd.setText("Save");

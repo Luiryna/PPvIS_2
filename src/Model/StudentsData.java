@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentsData {
-    private StudentsData studentsData;
+    //private StudentsData studentsData;
 
     public List<Student> students = new ArrayList<>();
 

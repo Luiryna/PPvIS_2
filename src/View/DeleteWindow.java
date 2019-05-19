@@ -14,10 +14,12 @@ public class DeleteWindow {
     private Shell shell;
     public Controller controller;
     private StudentsData studentsData;
+    private MainWindow mainWindow;
     private Pagination pagination;
 
     public DeleteWindow(Display display, StudentsData studentsData, Controller controller, MainWindow mainWindow) {
         this.studentsData = studentsData;
+        this.mainWindow = mainWindow;
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Delete window");
         shell.setSize(330, 600);
@@ -88,13 +90,11 @@ public class DeleteWindow {
                     MessageBox warning1 = new MessageBox(shell, SWT.COLOR_RED);
                     warning1.setMessage(count + " items was deleted");
                     warning1.open();
-                    //pagination.clear();
-                    //pagination.draw(studentsData, controller);
+                    mainWindow.redraw();
                     shell.close();
 
                 }
-                //text1.setText("");
-                //text12.setText("");
+
 
             }
         });

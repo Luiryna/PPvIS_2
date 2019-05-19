@@ -77,6 +77,8 @@ public class AddWindow {
                 home.setText("");
                 mobPhone.setText("");
                 homePhone.setText("");
+
+                mainWindow.redraw();
             }
         });
         shell.open();

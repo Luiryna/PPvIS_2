@@ -14,7 +14,7 @@ public class DeleteWindow {
     private Shell shell;
     public Controller controller;
     private StudentsData studentsData;
-    private Composite composite;
+    private Pagination pagination;
 
     public DeleteWindow(Display display, StudentsData studentsData, Controller controller, MainWindow mainWindow) {
         this.studentsData = studentsData;
@@ -88,8 +88,8 @@ public class DeleteWindow {
                     MessageBox warning1 = new MessageBox(shell, SWT.COLOR_RED);
                     warning1.setMessage(count + " items was deleted");
                     warning1.open();
-                    //mainWindow.clear();
-                    //mainWindow.draw();
+                    //pagination.clear();
+                    //pagination.draw(studentsData, controller);
                     shell.close();
 
                 }

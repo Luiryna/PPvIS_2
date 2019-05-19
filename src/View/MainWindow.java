@@ -21,7 +21,7 @@ public class MainWindow {
 
     public MainWindow() {
         shell.setText("PPvIS 2");
-        shell.setSize(750, 600);
+        shell.setSize(750, 900);
         controller = new Controller(studentsData);
         Menu menuBar = new Menu(shell, SWT.BAR);
         shell.setMenuBar(menuBar);
@@ -158,7 +158,7 @@ public class MainWindow {
 
         pagination = new Pagination(shell, SWT.NULL);
         pagination.initTable(studentsData, controller);
-        pagination.setBounds(50, 150, 992, 400);
+        pagination.setBounds(50, 150, 992, 600);
 
 
 

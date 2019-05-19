@@ -65,4 +65,17 @@
             <home_phone>57657565765</home_phone>
         </mobiles>
 	</student>
+    <student>
+        <surname>лукашевич</surname>
+        <name>6661</name>
+        <patronymic>666</patronymic>
+        <adres>
+            <street>666</street>
+            <home>666</home>
+        </adres>
+        <mobiles>
+            <mobile_phone>666</mobile_phone>
+            <home_phone>666</home_phone>
+        </mobiles>
+    </student>
 </listStudent>

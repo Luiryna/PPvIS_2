@@ -26,7 +26,7 @@ public class Pagination extends Composite {
         super(composite, i);
     }
 
-    public void draw(StudentsData studentsData, Controller controller) {
+    public void drawWrites(StudentsData studentsData, Controller controller) {
         clear();
 
         int toIndex = currentPageNumber*count+count <= studentsData.getStudents().size() ? currentPageNumber*count+count : studentsData.getStudents().size();
@@ -56,7 +56,7 @@ public class Pagination extends Composite {
         fioColumn.setWidth(width);
     }
 
-    public void initTable(StudentsData studentsData, Controller controller) {
+    public void createTableForWrites(StudentsData studentsData, Controller controller) {
 
         table.setBounds(50, 200, 520, 300);
         table.setHeaderVisible(true);
@@ -78,7 +78,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 currentPageNumber = 0;
-                draw(studentsData, controller);
+                drawWrites(studentsData, controller);
             }
         });
 
@@ -93,7 +93,7 @@ public class Pagination extends Composite {
                     currentPageNumber--;
                 }
 
-                draw(studentsData, controller);
+                drawWrites(studentsData, controller);
             }
         });
 
@@ -107,7 +107,7 @@ public class Pagination extends Composite {
                 if (currentPageNumber < lastPage){
                     currentPageNumber++;
                 }
-                draw(studentsData, controller);
+                drawWrites(studentsData, controller);
             }
         });
 
@@ -119,7 +119,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 currentPageNumber = lastPage;
-                draw(studentsData, controller);
+                drawWrites(studentsData, controller);
             }
         });
 
@@ -135,7 +135,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 count = Integer.parseInt(numberToShow.getText());
-                draw(studentsData, controller);
+                drawWrites(studentsData, controller);
             }});
 
         allWrites.setBounds(50, 50, 200, 30);

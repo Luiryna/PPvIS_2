@@ -69,7 +69,7 @@ public class DeleteWindow {
 
                 int count = 0;
 
-                for (Student student : controller.firstSearch(text1.getText(), text12.getText())) {
+                for (Student student : controller.SearchBySurnameAndHomePhone(text1.getText(), text12.getText())) {
                     studentsData.getStudents().remove(student);
                     count++;
                 }

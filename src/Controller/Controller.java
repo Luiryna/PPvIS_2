@@ -50,10 +50,23 @@ public class Controller {
 
 
 
-    public List<Student> firstSearch(String surname, String phoneNumb){
+    public List<Student> SearchBySurnameAndHomePhone(String surname, String phoneNumb){
         List<Student> students = new ArrayList<>();
         for (Student student: studentsData.getStudents()){
             if (student.getSurname().equals(surname) && student.getHomePhone().equals(phoneNumb)){
+                students.add(student);
+                System.out.println(String.format("фамилия: %s,  имя: %s,  отчество: %s, моб: %s, дом: %s",
+                        student.getSurname(), student.getName(), student.getPatronymic(), student.getMobPhone(), student.getHomePhone()));
+            }
+        }
+
+        return students;
+    }
+
+    public List<Student> SearchBySurnameAndMobilePhone(String surname, String phoneNumb){
+        List<Student> students = new ArrayList<>();
+        for (Student student: studentsData.getStudents()){
+            if (student.getSurname().equals(surname) && student.getMobPhone().equals(phoneNumb)){
                 students.add(student);
                 System.out.println(String.format("фамилия: %s,  имя: %s,  отчество: %s, моб: %s, дом: %s",
                         student.getSurname(), student.getName(), student.getPatronymic(), student.getMobPhone(), student.getHomePhone()));

@@ -2,7 +2,6 @@ package View;
 
 import Controller.Controller;
 import Model.StudentsData;
-import Model.Student;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -28,10 +27,20 @@ public class SearchWindow {
         group1.setText("first search");
         group1.setLayout(new RowLayout(SWT.VERTICAL));
 
-        Label label = new Label(group1, SWT.NONE);
-        label.setText("Enter surname and phone number");
+        Label labelText1 = new Label(group1, SWT.NONE);
+        labelText1.setText("Enter surname");
 
         Text text1 = new Text(group1, SWT.BORDER);
+
+        Label labelText12 = new Label(group1, SWT.NONE);
+        labelText12.setText("Enter home or mobile phone");
+
+        Button radio1 = new Button(group1, SWT.RADIO);
+        radio1.setText("Home");
+
+        Button radio2 = new Button(group1, SWT.RADIO);
+        radio2.setText("Mobile");
+
         Text text12 = new Text(group1, SWT.BORDER);
 
         Button button = new Button(group1, SWT.NONE);
@@ -68,16 +77,24 @@ public class SearchWindow {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 //studentsData1 = new StudentsData();
-                studentsData1.students = controller.firstSearch(text1.getText(), text12.getText());
-                pagination.draw(studentsData1, controller);
+                if (radio1.getSelection()) {
+                studentsData1.students = controller.SearchBySurnameAndHomePhone(text1.getText(), text12.getText());
+                pagination.drawWrites(studentsData1, controller);
                 text1.setText("");
-                text12.setText("");
+                text12.setText("");} else {
+                    if (radio2.getSelection()) {
+                        studentsData1.students = controller.SearchBySurnameAndMobilePhone(text1.getText(), text12.getText());
+                        pagination.drawWrites(studentsData1, controller);
+                        text1.setText("");
+                        text12.setText("");
+                    } else {}
+                }
             }
         });
 
         pagination = new Pagination(shell, SWT.NONE);
         this.controller = controller;
-        pagination.initTable(studentsData1, controller);
+        pagination.createTableForWrites(studentsData1, controller);
         shell.open();
     }
 

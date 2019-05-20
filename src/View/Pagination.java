@@ -6,7 +6,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.*;
-import Controller.Controller;
+
 import java.util.List;
 
 
@@ -23,15 +23,22 @@ public class Pagination extends Composite {
     int lastPage = 1;
 
     public Pagination(Composite composite, int i) {
+
         super(composite, i);
+
     }
 
-    public void drawWrites(StudentsData studentsData) {
+    public void insertWrites(StudentsData studentsData) {
         clear();
 
         int toIndex = currentPageNumber*count+count <= studentsData.getStudents().size() ? currentPageNumber*count+count : studentsData.getStudents().size();
         double result = studentsData.getStudents().size()/count;
         lastPage = (int) Math.ceil(result);
+
+        System.out.println(studentsData.getStudents().size());
+        System.out.println(count);
+        System.out.println(result);
+        System.out.println(lastPage);
 
         List<Student> studentList = studentsData.getStudents().subList(currentPageNumber*count, toIndex);
 
@@ -78,7 +85,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 currentPageNumber = 0;
-                drawWrites(studentsData);
+                insertWrites(studentsData);
             }
         });
 
@@ -93,7 +100,7 @@ public class Pagination extends Composite {
                     currentPageNumber--;
                 }
 
-                drawWrites(studentsData);
+                insertWrites(studentsData);
             }
         });
 
@@ -107,7 +114,7 @@ public class Pagination extends Composite {
                 if (currentPageNumber < lastPage){
                     currentPageNumber++;
                 }
-                drawWrites(studentsData);
+                insertWrites(studentsData);
             }
         });
 
@@ -119,7 +126,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 currentPageNumber = lastPage;
-                drawWrites(studentsData);
+                insertWrites(studentsData);
             }
         });
 
@@ -135,7 +142,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 count = Integer.parseInt(numberToShow.getText());
-                drawWrites(studentsData);
+                insertWrites(studentsData);
             }});
 
         allWrites.setBounds(50, 50, 200, 30);
@@ -144,7 +151,9 @@ public class Pagination extends Composite {
     }
 
     public void clear() {
+
         table.removeAll();
+
     }
 }
 

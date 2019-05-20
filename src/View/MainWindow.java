@@ -155,7 +155,7 @@ public class MainWindow {
 
     public void redraw(){
         pagination.clear();
-        pagination.drawWrites(studentsData);
+        pagination.insertWrites(studentsData);
     }
     private void save() {
         FileDialog fd = new FileDialog(shell, SWT.SAVE);
@@ -176,7 +176,7 @@ public class MainWindow {
         String selected = fd.open();
         controller.open(new File(selected));
         pagination.clear();
-        pagination.drawWrites(studentsData);
+        pagination.insertWrites(studentsData);
     }
 
 

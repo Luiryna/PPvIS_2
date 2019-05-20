@@ -28,10 +28,20 @@ public class DeleteWindow {
         group1.setText("first delete");
         group1.setLayout(new RowLayout(SWT.VERTICAL));
 
-        Label label = new Label(group1, SWT.NONE);
-        label.setText("Enter surname and phone number");
+        Label labelText1 = new Label(group1, SWT.NONE);
+        labelText1.setText("Enter surname");
 
         Text text1 = new Text(group1, SWT.BORDER);
+
+        Label labelText12 = new Label(group1, SWT.NONE);
+        labelText12.setText("Enter home or mobile phone");
+
+        Button radio1 = new Button(group1, SWT.RADIO);
+        radio1.setText("Home");
+
+        Button radio2 = new Button(group1, SWT.RADIO);
+        radio2.setText("Mobile");
+
         Text text12 = new Text(group1, SWT.BORDER);
 
         Button button = new Button(group1, SWT.NONE);
@@ -69,10 +79,21 @@ public class DeleteWindow {
 
                 int count = 0;
 
-                for (Student student : controller.SearchBySurnameAndHomePhone(text1.getText(), text12.getText())) {
-                    studentsData.getStudents().remove(student);
-                    count++;
+                if (radio1.getSelection()){
+                    for (Student student : controller.SearchBySurnameAndHomePhone(text1.getText(), text12.getText())) {
+                        studentsData.getStudents().remove(student);
+                        count++;
+                    }
+                } else {
+                    if (radio2.getSelection()) {
+                        for (Student student : controller.SearchBySurnameAndMobilePhone(text1.getText(), text12.getText())) {
+                            studentsData.getStudents().remove(student);
+                            count++;
+                        }
+                    }
                 }
+
+
 
                 if (count == 0) {
 
@@ -93,8 +114,6 @@ public class DeleteWindow {
 
             }
         });
-
-
 
         this.controller = controller;
         shell.open();

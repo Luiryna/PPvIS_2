@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<listStudent>
+    <student>
+        <surname>ааа</surname>
+        <name>аппп</name>
+        <patronymic>ааа</patronymic>
+        <adres>
+            <street>вввв</street>
+            <home>пвапв</home>
+        </adres>
+        <mobiles>
+            <mobile_phone>ааа</mobile_phone>
+            <home_phone>ааа</home_phone>
+        </mobiles>
+    </student>
+</listStudent>

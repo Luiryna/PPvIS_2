@@ -79,12 +79,12 @@ public class SearchWindow {
                 //studentsData1 = new StudentsData();
                 if (radio1.getSelection()) {
                 studentsData1.students = controller.SearchBySurnameAndHomePhone(text1.getText(), text12.getText());
-                pagination.drawWrites(studentsData1, controller);
+                pagination.drawWrites(studentsData1);
                 text1.setText("");
                 text12.setText("");} else {
                     if (radio2.getSelection()) {
                         studentsData1.students = controller.SearchBySurnameAndMobilePhone(text1.getText(), text12.getText());
-                        pagination.drawWrites(studentsData1, controller);
+                        pagination.drawWrites(studentsData1);
                         text1.setText("");
                         text12.setText("");
                     } else {}
@@ -94,7 +94,7 @@ public class SearchWindow {
 
         pagination = new Pagination(shell, SWT.NONE);
         this.controller = controller;
-        pagination.createTableForWrites(studentsData1, controller);
+        pagination.createTableForWrites(studentsData1);
         shell.open();
     }
 

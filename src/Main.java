@@ -9,5 +9,6 @@ public class Main {
         // убрать копипасту
         // добавить поиски
         // общение окон без SudentsData -> ArrayList<Student>??
+        // пагинатор!!!
     }
 }

@@ -14,12 +14,12 @@ public class MainWindow {
     private Display display = new Display();
     private Shell shell = new Shell(display, SWT.SHELL_TRIM | SWT.CENTER);
     private Controller controller;
-    private StudentsData studentsData = new StudentsData();
     private Pagination pagination;
 
     public MainWindow() {
         shell.setText("PPvIS 2");
         shell.setSize(750, 900);
+        StudentsData studentsData = new StudentsData();
         controller = new Controller(studentsData);
         Menu menuBar = new Menu(shell, SWT.BAR);
         shell.setMenuBar(menuBar);

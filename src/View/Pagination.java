@@ -19,7 +19,7 @@ public class Pagination extends Composite {
     public Label allPages = new Label(this, SWT.NONE);
     public Label currentPage = new Label(this, SWT.NONE);
     public Text numberToShow = new Text(this, SWT.BORDER);
-    //private List<Student> students;
+    private List<Student> students;
     int count = 5;
     int currentPageNumber = 0;
     int lastPage = 1;
@@ -30,20 +30,20 @@ public class Pagination extends Composite {
 
     }
 
-    public void insertWrites(StudentsData studentsData) {
+    public void insertWrites() {
         clear();
 
         //int toIndex = currentPageNumber*count+count <= studentsData.getStudents().size() ? currentPageNumber*count+count : studentsData.getStudents().size();
         //double result = studentsData.getStudents().size()/count;
         //lastPage = (int) Math.ceil(result);
-        lastPage = studentsData.getStudents().size() % count == 0 ? studentsData.getStudents().size() / count : studentsData.getStudents().size() / count + 1;
-        int toIndex = (currentPageNumber + 1) * count > studentsData.getStudents().size() ? studentsData.getStudents().size() : (currentPageNumber + 1) * count;
-        System.out.println(studentsData.getStudents().size());
+        lastPage = students.size() % count == 0 ?students.size() / count : students.size() / count + 1;
+        int toIndex = (currentPageNumber + 1) * count > students.size() ? students.size() : (currentPageNumber + 1) * count;
+        System.out.println(students.size());
         System.out.println(count);
         //System.out.println(result);
         System.out.println(lastPage);
 
-        List<Student> studentList = studentsData.getStudents().subList(currentPageNumber*count, toIndex);
+        List<Student> studentList = students.subList(currentPageNumber*count, toIndex);
 
         for (Student student : studentList) {
             TableItem tableItem = new TableItem(table, SWT.PUSH);
@@ -54,9 +54,12 @@ public class Pagination extends Composite {
 
         }
 
-        allWrites.setText("Total number of writes: " + studentsData.getStudents().size());
+        allWrites.setText("Total number of writes: " + students.size());
         allPages.setText("Pages at all: " + lastPage);
         currentPage.setText("Current page: " + (currentPageNumber + 1));
+
+        table.redraw();
+        super.redraw();
     }
 
     private void createColumn(Table table, String text, int width){
@@ -66,7 +69,7 @@ public class Pagination extends Composite {
         fioColumn.setWidth(width);
     }
 
-    public void createTableForWrites(StudentsData studentsData) {
+    public void createTableForWrites() {
 
         table.setBounds(50, 200, 520, 300);
         table.setHeaderVisible(true);
@@ -88,7 +91,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 currentPageNumber = 0;
-                insertWrites(studentsData);
+                insertWrites();
             }
         });
 
@@ -103,7 +106,7 @@ public class Pagination extends Composite {
                     currentPageNumber--;
                 }
 
-                insertWrites(studentsData);
+                insertWrites();
             }
         });
 
@@ -116,7 +119,7 @@ public class Pagination extends Composite {
             public void widgetSelected(SelectionEvent e) {
                 if (table.getItems().length == count && currentPageNumber + 1 < lastPage){
                     currentPageNumber++;
-                    insertWrites(studentsData);
+                    insertWrites();
                 }
             }
         });
@@ -129,7 +132,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 currentPageNumber = lastPage - 1;
-                insertWrites(studentsData);
+                insertWrites();
             }
         });
 
@@ -146,7 +149,7 @@ public class Pagination extends Composite {
             public void widgetSelected(SelectionEvent e) {
                 count = Integer.parseInt(numberToShow.getText());
                 currentPageNumber = 0;
-                insertWrites(studentsData);
+                insertWrites();
             }});
 
         allWrites.setBounds(50, 50, 200, 30);
@@ -158,6 +161,15 @@ public class Pagination extends Composite {
 
         table.removeAll();
 
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
+    public void insertWrites(List<Student> students) {
+        setStudents(students);
+        insertWrites();
     }
 }
 

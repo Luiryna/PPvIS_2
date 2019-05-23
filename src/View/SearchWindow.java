@@ -1,7 +1,9 @@
 package View;
 
 import Controller.Controller;
+import Model.Student;
 import Model.StudentsData;
+import java.util.List;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -11,7 +13,6 @@ import org.eclipse.swt.widgets.*;
 public class SearchWindow {
     public Controller controller;
     public Pagination pagination;
-    private StudentsData studentsData1 = new StudentsData();
 
     public SearchWindow(Display display, Controller controller) {
         Shell shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
@@ -77,14 +78,15 @@ public class SearchWindow {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 //studentsData1 = new StudentsData();
+                List<Student> students;
                 if (radio1.getSelection()) {
-                studentsData1.students = controller.SearchBySurnameAndHomePhone(text1.getText(), text12.getText());
-                pagination.insertWrites(studentsData1);
+                students = controller.SearchBySurnameAndHomePhone(text1.getText(), text12.getText());
+                pagination.insertWrites(students);
                 text1.setText("");
                 text12.setText("");} else {
                     if (radio2.getSelection()) {
-                        studentsData1.students = controller.SearchBySurnameAndMobilePhone(text1.getText(), text12.getText());
-                        pagination.insertWrites(studentsData1);
+                        students = controller.SearchBySurnameAndMobilePhone(text1.getText(), text12.getText());
+                        pagination.insertWrites(students);
                         text1.setText("");
                         text12.setText("");
                     } else {}
@@ -94,7 +96,7 @@ public class SearchWindow {
 
         pagination = new Pagination(shell, SWT.NONE);
         this.controller = controller;
-        pagination.createTableForWrites(studentsData1);
+        pagination.createTableForWrites();
         shell.open();
     }
 

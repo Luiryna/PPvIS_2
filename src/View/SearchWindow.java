@@ -13,7 +13,7 @@ public class SearchWindow {
     public Pagination pagination;
     private StudentsData studentsData1 = new StudentsData();
 
-    public SearchWindow(Display display, Controller controller, StudentsData studentsData) {
+    public SearchWindow(Display display, Controller controller) {
         Shell shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Search window");
         shell.setSize(800, 800);

@@ -14,7 +14,7 @@ public class DeleteWindow {
     private Shell shell;
     public Controller controller;
 
-    public DeleteWindow(Display display, StudentsData studentsData, Controller controller, MainWindow mainWindow) {
+    public DeleteWindow(Display display, Controller controller, MainWindow mainWindow) {
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Delete window");
         shell.setSize(330, 600);
@@ -81,13 +81,13 @@ public class DeleteWindow {
 
                 if (radio1.getSelection()){
                     for (Student student : controller.SearchBySurnameAndHomePhone(text1.getText(), text12.getText())) {
-                        studentsData.getStudents().remove(student);
+                        controller.getStudents().remove(student);
                         count++;
                     }
                 } else {
                     if (radio2.getSelection()) {
                         for (Student student : controller.SearchBySurnameAndMobilePhone(text1.getText(), text12.getText())) {
-                            studentsData.getStudents().remove(student);
+                            controller.getStudents().remove(student);
                             count++;
                         }
                     }

@@ -52,7 +52,7 @@ public class MainWindow {
         item3.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent arg0) {
-                AddWindow addWindow = new AddWindow(display, controller, studentsData, MainWindow.this);
+                AddWindow addWindow = new AddWindow(display, controller, MainWindow.this);
             }
 
         });
@@ -63,7 +63,7 @@ public class MainWindow {
         item4.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent arg0) {
-                SearchWindow searchWindow = new SearchWindow(display, controller, studentsData);
+                SearchWindow searchWindow = new SearchWindow(display, controller);
 
 
             }
@@ -77,7 +77,7 @@ public class MainWindow {
 
             public void widgetSelected(SelectionEvent arg0) {
 
-                DeleteWindow deleteWindow = new DeleteWindow(display, studentsData, controller, MainWindow.this);
+                DeleteWindow deleteWindow = new DeleteWindow(display, controller, MainWindow.this);
 
             }
 
@@ -119,21 +119,21 @@ public class MainWindow {
         add.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                AddWindow addWindow = new AddWindow(display, controller, studentsData, MainWindow.this);
+                AddWindow addWindow = new AddWindow(display, controller,  MainWindow.this);
             }
         });
 
         search.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                SearchWindow searchWindow = new SearchWindow(display, controller, studentsData);
+                SearchWindow searchWindow = new SearchWindow(display, controller);
             }
         });
 
         delete.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                DeleteWindow deleteWindow = new DeleteWindow(display, studentsData, controller, MainWindow.this);
+                DeleteWindow deleteWindow = new DeleteWindow(display, controller, MainWindow.this);
             }
         });
 

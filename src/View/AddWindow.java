@@ -12,7 +12,7 @@ import Controller.Controller;
 
 public class AddWindow {
 
-    public AddWindow(Display display, Controller controller, StudentsData studentsData, MainWindow mainWindow) {
+    public AddWindow(Display display, Controller controller, MainWindow mainWindow) {
         Shell shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Add display");
         shell.setSize(200, 650);
@@ -57,9 +57,8 @@ public class AddWindow {
         add.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                Student student = new Student(surname.getText(), name.getText(), patronymic.getText(), street.getText(),
-                        home.getText(), mobPhone.getText(), homePhone.getText());
-                studentsData.setStudent(student);
+                controller.addStudent(surname.getText(), name.getText(), patronymic.getText(), street.getText(),
+                     home.getText(), mobPhone.getText(), homePhone.getText());
 
                 surname.setText("");
                 name.setText("");

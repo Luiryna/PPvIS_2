@@ -48,7 +48,15 @@ public class Controller {
         }
     }
 
+    public void addStudent(String surname, String name, String patronymic, String street,
+                           String home, String mobPhone, String homePhone){
+        Student student = new Student(surname, name, patronymic, street, home, mobPhone, homePhone);
+        studentsData.setStudent(student);
+    }
 
+    public void removeStudent() {
+
+    }
 
     public List<Student> SearchBySurnameAndHomePhone(String surname, String phoneNumb){
         List<Student> students = new ArrayList<>();
@@ -74,6 +82,10 @@ public class Controller {
         }
 
         return students;
+    }
+
+    public List<Student> getStudents() {
+        return studentsData.getStudents();
     }
 
 }

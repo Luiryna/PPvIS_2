@@ -114,10 +114,10 @@ public class Pagination extends Composite {
         buttonNextPage.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                if (currentPageNumber < lastPage){
+                if (table.getItems().length == count && currentPageNumber + 1 < lastPage){
                     currentPageNumber++;
+                    insertWrites(studentsData);
                 }
-                insertWrites(studentsData);
             }
         });
 
@@ -145,6 +145,7 @@ public class Pagination extends Composite {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 count = Integer.parseInt(numberToShow.getText());
+                currentPageNumber = 0;
                 insertWrites(studentsData);
             }});
 

@@ -19,8 +19,8 @@ public class MainWindow {
     public MainWindow() {
         shell.setText("PPvIS 2");
         shell.setSize(750, 900);
-        StudentsData studentsData = new StudentsData();
-        controller = new Controller(studentsData);
+
+        controller = new Controller(new StudentsData());
         Menu menuBar = new Menu(shell, SWT.BAR);
         shell.setMenuBar(menuBar);
 

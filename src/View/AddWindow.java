@@ -22,11 +22,11 @@ public class AddWindow {
         rowLayout.marginTop = 50;
         shell.setLayout(rowLayout);
         Label labelSurname = new Label(shell, SWT.NONE);
-        labelSurname.setText("Enter surname");
+        labelSurname.setText("Enter name");
         Text surname = new Text(shell, SWT.BORDER);
 
         Label labelName = new Label(shell, SWT.NONE);
-        labelName.setText("Enter name");
+        labelName.setText("Enter surname");
         Text name = new Text(shell, SWT.BORDER);
 
         Label labelPatronymic = new Label(shell, SWT.NONE);

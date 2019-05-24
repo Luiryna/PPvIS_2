@@ -1,70 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <listStudent>
-	<student>
-		<surname>фамилия1</surname>
-		<name>имя1</name>
-		<patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица1</street>
-            <home>дом1</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный1</mobile_phone>
-            <home_phone>домашний1</home_phone>
-        </mobiles>
-	</student>
-    <student>
-        <surname>фамилия1</surname>
-        <name>имя2</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица2</street>
-            <home>дом2</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный1</mobile_phone>
-            <home_phone>домашний3</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия2</surname>
-        <name>имя3</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица2</street>
-            <home>дом2</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный2</mobile_phone>
-            <home_phone>домашний1</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия1</surname>
-        <name>имя1</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица2</street>
-            <home>дом2</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный1</mobile_phone>
-            <home_phone>домашний1</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия2</surname>
-        <name>имя1</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица3</street>
-            <home>дом3</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный2</mobile_phone>
-            <home_phone>домашний3</home_phone>
-        </mobiles>
-    </student>
     <student>
         <surname>фамилия3</surname>
         <name>имя2</name>
@@ -74,8 +9,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный2</mobile_phone>
-            <home_phone>домашний3</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -87,8 +22,8 @@
             <home>дом2</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный2</mobile_phone>
-            <home_phone>домашний5</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -100,21 +35,8 @@
             <home>дом2</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный4</mobile_phone>
-            <home_phone>домашний2</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия1</surname>
-        <name>имя4</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица2</street>
-            <home>дом1</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный1</mobile_phone>
-            <home_phone>домашний2</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -126,8 +48,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний4</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -139,8 +61,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный5</mobile_phone>
-            <home_phone>домашний3</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -152,8 +74,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный3</mobile_phone>
-            <home_phone>домашний7</home_phone>
+            <mobile_phone>отчество4</mobile_phone>
+            <home_phone>отчество4</home_phone>
         </mobiles>
     </student>
     <student>
@@ -165,8 +87,8 @@
             <home>дом5</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный3</mobile_phone>
-            <home_phone>домашний8</home_phone>
+            <mobile_phone>отчество3</mobile_phone>
+            <home_phone>отчество3</home_phone>
         </mobiles>
     </student>
     <student>
@@ -178,8 +100,8 @@
             <home>дом7</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний3</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -191,8 +113,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный3</mobile_phone>
-            <home_phone>домашний8</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -204,21 +126,8 @@
             <home>дом7</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный7</mobile_phone>
-            <home_phone>домашний6</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия2</surname>
-        <name>имя2</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица1</street>
-            <home>дом6</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный1</mobile_phone>
-            <home_phone>домашний1</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -230,8 +139,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный1</mobile_phone>
-            <home_phone>домашний7</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -243,21 +152,8 @@
             <home>дом4</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный7</mobile_phone>
-            <home_phone>домашний3</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия6</surname>
-        <name>имя1</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица4</street>
-            <home>дом1</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный7</mobile_phone>
-            <home_phone>домашний1</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -269,8 +165,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний4</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -282,21 +178,8 @@
             <home>дом5</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный4</mobile_phone>
-            <home_phone>домашний3</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия2</surname>
-        <name>имя5</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица7</street>
-            <home>дом2</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный5</mobile_phone>
-            <home_phone>домашний2</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -308,8 +191,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный5</mobile_phone>
-            <home_phone>домашний4</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -321,8 +204,8 @@
             <home>дом6</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный4</mobile_phone>
-            <home_phone>домашний4</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -334,8 +217,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний6</home_phone>
+            <mobile_phone>отчество5</mobile_phone>
+            <home_phone>отчество5</home_phone>
         </mobiles>
     </student>
     <student>
@@ -347,21 +230,8 @@
             <home>дом6</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний6</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия2</surname>
-        <name>имя6</name>
-        <patronymic>отчество1</patronymic>
-        <adres>
-            <street>улица5</street>
-            <home>дом5</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный3</mobile_phone>
-            <home_phone>домашний3</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -373,8 +243,8 @@
             <home>дом4</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный4</mobile_phone>
-            <home_phone>домашний4</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -386,8 +256,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный9</mobile_phone>
-            <home_phone>домашний9</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -399,8 +269,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний6</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -412,34 +282,8 @@
             <home>дом5</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный2</mobile_phone>
-            <home_phone>домашний5</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия6</surname>
-        <name>имя4</name>
-        <patronymic>отчество8</patronymic>
-        <adres>
-            <street>улица1</street>
-            <home>дом1</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный1</mobile_phone>
-            <home_phone>домашний1</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия2</surname>
-        <name>имя7</name>
-        <patronymic>отчество56</patronymic>
-        <adres>
-            <street>улица2</street>
-            <home>дом2</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный5</mobile_phone>
-            <home_phone>домашний1</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -451,8 +295,8 @@
             <home>дом6</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный0</mobile_phone>
-            <home_phone>домашний0</home_phone>
+            <mobile_phone>отчество7</mobile_phone>
+            <home_phone>отчество7</home_phone>
         </mobiles>
     </student>
     <student>
@@ -464,8 +308,8 @@
             <home>дом23</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный7</mobile_phone>
-            <home_phone>домашний5</home_phone>
+            <mobile_phone>отчество18</mobile_phone>
+            <home_phone>отчество18</home_phone>
         </mobiles>
     </student>
     <student>
@@ -477,8 +321,8 @@
             <home>дом4</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний3</home_phone>
+            <mobile_phone>отчество6</mobile_phone>
+            <home_phone>отчество6</home_phone>
         </mobiles>
     </student>
     <student>
@@ -490,8 +334,8 @@
             <home>дом6</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний3</home_phone>
+            <mobile_phone>отчество9</mobile_phone>
+            <home_phone>отчество9</home_phone>
         </mobiles>
     </student>
     <student>
@@ -503,8 +347,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный9</mobile_phone>
-            <home_phone>домашний2</home_phone>
+            <mobile_phone>отчество34</mobile_phone>
+            <home_phone>отчество34</home_phone>
         </mobiles>
     </student>
     <student>
@@ -516,8 +360,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный8</mobile_phone>
-            <home_phone>домашний45</home_phone>
+            <mobile_phone>отчество7</mobile_phone>
+            <home_phone>отчество7</home_phone>
         </mobiles>
     </student>
     <student>
@@ -529,21 +373,8 @@
             <home>дом5</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный7</mobile_phone>
-            <home_phone>домашний3</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия7</surname>
-        <name>имя3</name>
-        <patronymic>отчество7</patronymic>
-        <adres>
-            <street>улица6</street>
-            <home>дом4</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный1</mobile_phone>
-            <home_phone>домашний1</home_phone>
+            <mobile_phone>отчество9</mobile_phone>
+            <home_phone>отчество9</home_phone>
         </mobiles>
     </student>
     <student>
@@ -555,8 +386,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный67</mobile_phone>
-            <home_phone>домашний3</home_phone>
+            <mobile_phone>отчество67</mobile_phone>
+            <home_phone>отчество67</home_phone>
         </mobiles>
     </student>
     <student>
@@ -568,8 +399,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный54</mobile_phone>
-            <home_phone>домашний9</home_phone>
+            <mobile_phone>отчество7</mobile_phone>
+            <home_phone>отчество7</home_phone>
         </mobiles>
     </student>
     <student>
@@ -581,8 +412,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный9</mobile_phone>
-            <home_phone>домашний4</home_phone>
+            <mobile_phone>отчество7</mobile_phone>
+            <home_phone>отчество7</home_phone>
         </mobiles>
     </student>
     <student>
@@ -594,8 +425,8 @@
             <home>дом8</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный10</mobile_phone>
-            <home_phone>домашний14</home_phone>
+            <mobile_phone>отчество8</mobile_phone>
+            <home_phone>отчество8</home_phone>
         </mobiles>
     </student>
     <student>
@@ -607,8 +438,8 @@
             <home>дом1</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный4</mobile_phone>
-            <home_phone>домашний8</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
     <student>
@@ -620,8 +451,8 @@
             <home>дом3</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный8</mobile_phone>
-            <home_phone>домашний5</home_phone>
+            <mobile_phone>отчество8</mobile_phone>
+            <home_phone>отчество8</home_phone>
         </mobiles>
     </student>
     <student>
@@ -633,8 +464,8 @@
             <home>дом8</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный6</mobile_phone>
-            <home_phone>домашний4</home_phone>
+            <mobile_phone>отчество6</mobile_phone>
+            <home_phone>отчество6</home_phone>
         </mobiles>
     </student>
     <student>
@@ -646,8 +477,8 @@
             <home>дом4</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный7</mobile_phone>
-            <home_phone>домашний7</home_phone>
+            <mobile_phone>отчество578</mobile_phone>
+            <home_phone>отчество578</home_phone>
         </mobiles>
     </student>
     <student>
@@ -659,8 +490,8 @@
             <home>дом8</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный7</mobile_phone>
-            <home_phone>домашний3</home_phone>
+            <mobile_phone>отчество9</mobile_phone>
+            <home_phone>отчество9</home_phone>
         </mobiles>
     </student>
     <student>
@@ -672,21 +503,8 @@
             <home>дом4</home>
         </adres>
         <mobiles>
-            <mobile_phone>мобильный4</mobile_phone>
-            <home_phone>домашний8</home_phone>
-        </mobiles>
-    </student>
-    <student>
-        <surname>фамилия6</surname>
-        <name>имя4</name>
-        <patronymic>отчество6</patronymic>
-        <adres>
-            <street>улица2</street>
-            <home>дом2</home>
-        </adres>
-        <mobiles>
-            <mobile_phone>мобильный2</mobile_phone>
-            <home_phone>домашний2</home_phone>
+            <mobile_phone>отчество1</mobile_phone>
+            <home_phone>отчество1</home_phone>
         </mobiles>
     </student>
 </listStudent>

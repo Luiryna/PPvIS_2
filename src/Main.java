@@ -6,9 +6,9 @@ public class Main {
         MainWindow mainDisplay = new MainWindow();
 	// write your code here
         //TODO
-        // убрать копипасту
-        // добавить поиски
-        // общение окон без SudentsData -> ArrayList<Student>??
-        // пагинатор!!!
+        // добавить поиски -> сделяль
+        // файл на 50 записей -> сделяль
+        // общение окон без StudentsData -> сделяль
+        // постраничный вывод!!! -> сделяль
     }
 }

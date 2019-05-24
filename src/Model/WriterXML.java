@@ -68,11 +68,11 @@ public class WriterXML {
                 Element elementMobiles = document.createElement("mobiles");
 
                 Element elementMobPhone = document.createElement("mobile_phone");
-                elementMobPhone.setTextContent(studentIter.getPatronymic());
+                elementMobPhone.setTextContent(studentIter.getMobPhone());
                 elementMobiles.appendChild(elementMobPhone);
 
                 Element elementHomePhone = document.createElement("home_phone");
-                elementHomePhone.setTextContent(studentIter.getPatronymic());
+                elementHomePhone.setTextContent(studentIter.getHomePhone());
                 elementMobiles.appendChild(elementHomePhone);
 
                 elementStudent.appendChild(elementMobiles);

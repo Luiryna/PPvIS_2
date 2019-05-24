@@ -4,6 +4,7 @@ import Model.StudentsData;
 import Model.SAXReader;
 import Model.Student;
 import Model.WriterXML;
+import com.sun.xml.internal.ws.server.ServerRtException;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -54,10 +55,6 @@ public class Controller {
         studentsData.setStudent(student);
     }
 
-    public void removeStudent() {
-
-    }
-
     public List<Student> SearchBySurnameAndHomePhone(String surname, String phoneNumb){
         List<Student> students = new ArrayList<>();
         for (Student student: studentsData.getStudents()){
@@ -81,6 +78,56 @@ public class Controller {
             }
         }
 
+        return students;
+    }
+
+    public List<Student> SearchByAdresAndHomePhone(String street, String home, String phoneNumb) {
+        List<Student> students = new ArrayList<>();
+        for (Student student: studentsData.getStudents()){
+            if ((student.getStreet().equals(street) && student.getHome().equals(home)) || student.getHomePhone().equals(phoneNumb)){
+                students.add(student);
+                System.out.println(String.format("фамилия: %s,  имя: %s,  отчество: %s, моб: %s, дом: %s",
+                        student.getSurname(), student.getName(), student.getPatronymic(), student.getMobPhone(), student.getHomePhone()));
+            }
+        }
+
+        return students;
+    }
+
+    public List<Student> SearchByAdresAndMobilePhone(String street, String home, String phoneNumb) {
+        List<Student> students = new ArrayList<>();
+        for (Student student: studentsData.getStudents()){
+            if ((student.getStreet().equals(street) && student.getHome().equals(home)) || student.getMobPhone().equals(phoneNumb)){
+                students.add(student);
+                System.out.println(String.format("фамилия: %s,  имя: %s,  отчество: %s, моб: %s, дом: %s",
+                        student.getSurname(), student.getName(), student.getPatronymic(), student.getMobPhone(), student.getHomePhone()));
+            }
+        }
+
+        return students;
+    }
+
+    public List<Student> SearchBySurnameAndNumeralsOfHomePhone(String surname, String phoneNumb) {
+        List<Student> students = new ArrayList<>();
+        for (Student student: studentsData.getStudents()){
+            if (student.getSurname().equals(surname) && student.getHomePhone().contains(phoneNumb)){
+                students.add(student);
+                System.out.println(String.format("фамилия: %s,  имя: %s,  отчество: %s, моб: %s, дом: %s",
+                        student.getSurname(), student.getName(), student.getPatronymic(), student.getMobPhone(), student.getHomePhone()));
+            }
+        }
+        return students;
+    }
+
+    public List<Student> SearchBySurnameAndNumeralsOfMobilePhone(String surname, String phoneNumb) {
+        List<Student> students = new ArrayList<>();
+        for (Student student: studentsData.getStudents()){
+            if (student.getSurname().equals(surname) && student.getMobPhone().contains(phoneNumb)){
+                students.add(student);
+                System.out.println(String.format("фамилия: %s,  имя: %s,  отчество: %s, моб: %s, дом: %s",
+                        student.getSurname(), student.getName(), student.getPatronymic(), student.getMobPhone(), student.getHomePhone()));
+            }
+        }
         return students;
     }
 

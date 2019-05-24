@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<listStudent>
+    <student>
+        <surname>ыввв</surname>
+        <name>лукашевич</name>
+        <patronymic>роро</patronymic>
+        <adres>
+            <street>длодло</street>
+            <home>юлтбло</home>
+        </adres>
+        <mobiles>
+            <mobile_phone>роро</mobile_phone>
+            <home_phone>роро</home_phone>
+        </mobiles>
+    </student>
+</listStudent>

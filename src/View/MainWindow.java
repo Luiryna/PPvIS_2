@@ -30,7 +30,15 @@ public class MainWindow {
         item1.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent arg0) {
-                open();
+                //open();
+                try
+                {
+                    open();
+                }
+                catch (NullPointerException ignored)
+                {
+
+                }
             }
 
         });
@@ -41,7 +49,15 @@ public class MainWindow {
         item2.addSelectionListener(new SelectionAdapter() {
 
             public void widgetSelected(SelectionEvent arg0) {
-                save();
+                //save();
+                try
+                {
+                    save();
+                }
+                catch (NullPointerException ignored)
+                {
+
+                }
             }
 
         });
@@ -104,14 +120,31 @@ public class MainWindow {
         save.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent e) {
-                save();
+                try
+                {
+                    save();
+                }
+                catch (NullPointerException ignored)
+                {
+
+                }
+
             }
         });
 
         open.addSelectionListener(new SelectionAdapter() {
             @Override
             public void widgetSelected(SelectionEvent selectionEvent) {
-                open();
+                //open();
+                try
+                {
+                    open();
+                }
+                catch (NullPointerException ignored)
+                {
+
+                }
+
             }
         });
 

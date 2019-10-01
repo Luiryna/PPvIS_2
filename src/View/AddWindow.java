@@ -1,7 +1,5 @@
 package View;
 
-import Model.StudentsData;
-import Model.Student;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -10,9 +8,9 @@ import org.eclipse.swt.widgets.*;
 
 import Controller.Controller;
 
-public class AddWindow {
+class AddWindow {
 
-    public AddWindow(Display display, Controller controller, MainWindow mainWindow) {
+    AddWindow(Display display, Controller controller, MainWindow mainWindow) {
         Shell shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Add display");
         shell.setSize(200, 650);

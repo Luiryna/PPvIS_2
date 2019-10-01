@@ -114,7 +114,7 @@ public class SearchWindow {
                             alert.setMessage("no items founded");
                             alert.open();
                         }
-                    } else {}
+                    }
                 }
 
 
@@ -144,7 +144,7 @@ public class SearchWindow {
                             alert.open();
                         }
 
-                    } else {}
+                    }
                 }
 
             }
@@ -172,7 +172,7 @@ public class SearchWindow {
                             alert.setMessage("no items founded");
                             alert.open();
                         }
-                    } else {}
+                    }
                 }
 
 

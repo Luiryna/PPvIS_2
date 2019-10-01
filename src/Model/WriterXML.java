@@ -15,7 +15,6 @@ import java.util.List;
 
 public class WriterXML {
     private File file;
-    private Document document;
     private List<Student> students;
 
     public WriterXML(File file, List<Student> students) {
@@ -33,7 +32,7 @@ public class WriterXML {
 
     public void write() throws TransformerException, ParserConfigurationException {
         if (file != null && students != null) {
-            document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+            Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             Element elementList = document.createElement("listStudent");
             for (Student studentIter : students) {
 

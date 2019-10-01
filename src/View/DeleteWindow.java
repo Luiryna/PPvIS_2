@@ -10,11 +10,10 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.*;
 
-public class DeleteWindow {
+class DeleteWindow {
     private Shell shell;
-    public Controller controller;
 
-    public DeleteWindow(Display display, Controller controller, MainWindow mainWindow) {
+    DeleteWindow(Display display, Controller controller, MainWindow mainWindow) {
         shell = new Shell(display, SWT.TITLE | SWT.CLOSE);
         shell.setText("Delete window");
         shell.setSize(330, 790);
@@ -221,7 +220,6 @@ public class DeleteWindow {
             }
         });
 
-        this.controller = controller;
         shell.open();
     }
 

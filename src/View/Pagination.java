@@ -12,17 +12,17 @@ import java.util.List;
 
 public class Pagination extends Composite {
 
-    public Table table = new Table(this, SWT.SINGLE | SWT.FULL_SELECTION |
+    private Table table = new Table(this, SWT.SINGLE | SWT.FULL_SELECTION |
             SWT.V_SCROLL | SWT.H_SCROLL);
-    public Label numberOfWrites = new Label(this, SWT.NONE);
-    public Label allWrites = new Label(this, SWT.NONE);
-    public Label allPages = new Label(this, SWT.NONE);
-    public Label currentPage = new Label(this, SWT.NONE);
-    public Text numberToShow = new Text(this, SWT.BORDER);
+    private Label numberOfWrites = new Label(this, SWT.NONE);
+    private Label allWrites = new Label(this, SWT.NONE);
+    private Label allPages = new Label(this, SWT.NONE);
+    private Label currentPage = new Label(this, SWT.NONE);
+    private Text numberToShow = new Text(this, SWT.BORDER);
     private List<Student> students;
-    int count = 5;
-    int currentPageNumber = 0;
-    int lastPage = 1;
+    private int count = 5;
+    private int currentPageNumber = 0;
+    private int lastPage = 1;
 
     public Pagination(Composite composite, int i) {
 
